@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>תוצרי תלמידים - יעקב כהן | Tech4Kids</title>
+<meta name="description" content="סיכום פעילות: תלמידי שכבת ו' בבית ספר יעקב כהן, קריית אונו, פיתחו יותר מ-25 משחקי מחשב ב-MakeCode Arcade, ובנו משחקים בעזרת בינה מלאכותית (Vibe Coding). מוזמנים לשחק.">
+<meta name="theme-color" content="#0d2b4d">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="he_IL">
+<meta property="og:site_name" content="Tech4Kids">
+<meta property="og:title" content="תוצרי תלמידים - יעקב כהן | Tech4Kids">
+<meta property="og:description" content="תלמידי שכבת ו' פיתחו יותר מ-25 משחקי מחשב, ובנו משחקים בעזרת בינה מלאכותית. מוזמנים לשחק.">
+<meta property="og:image" content="https://kotlermike-net-ai.github.io/tech4kids-schools/assets/og-tech4kids.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://kotlermike-net-ai.github.io/tech4kids-schools/yaakov-cohen-px23/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#faf6ee;
+  --paper:#ffffff;
+  --ink:#12263f;
+  --ink-soft:#4a5b72;
+  --navy:#0d2b4d;
+  --coin:#f2b705;
+  --coin-dark:#d99a00;
+  --line:#e4dccb;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"Heebo","Assistant",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+.icon{width:24px;height:24px;flex:none}
+.sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+/* top bar */
+.topbar{border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:10px;padding-bottom:10px}
+.school{font-size:14px;color:var(--ink-soft);margin:0}
+.school strong{color:var(--ink);font-weight:700}
+.logo{display:block;line-height:0;border-radius:8px;overflow:hidden;flex:none}
+.logo img{display:block;height:auto}
+.logo.top img{width:64px}
+.logo.foot img{width:52px}
+
+/* hero */
+.hero{padding:44px 0 10px}
+.hero h1{
+  font-size:clamp(28px,6.4vw,46px);
+  line-height:1.2;
+  font-weight:800;
+  margin:0 0 26px;
+  letter-spacing:-.01em;
+}
+.label{
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.04em;
+  color:var(--ink-soft);
+  margin:0 0 8px;
+}
+.lead{
+  font-size:clamp(18px,3.6vw,23px);
+  line-height:1.75;
+  max-width:44em;
+  margin:0 0 26px;
+}
+/* marker highlight that draws itself */
+.lead mark{
+  color:inherit;
+  background:linear-gradient(var(--coin),var(--coin)) no-repeat 100% 92%/100% 40%;
+  padding:0 2px;
+  transition:background-size .8s ease .7s;
+}
+.js .lead mark{background-size:0% 40%}
+.js.ready .lead mark{background-size:100% 40%}
+
+/* score counter */
+.hud{
+  display:inline-flex;align-items:center;gap:14px;
+  background:var(--navy);color:#fff;
+  border-radius:10px;
+  padding:10px 18px 10px 20px;
+  border-bottom:4px solid var(--coin);
+}
+.hud-num{
+  font-family:"Press Start 2P",monospace;
+  font-size:26px;line-height:1;color:var(--coin);
+  direction:ltr;min-width:2ch;text-align:center;
+}
+.hud-label{font-weight:700;font-size:16px}
+
+.px{height:8px;margin:34px 0 0;background:repeating-linear-gradient(90deg,var(--ink) 0 8px,transparent 8px 16px);opacity:.14}
+
+/* sections */
+section{padding:44px 0 6px}
+h2{
+  font-size:clamp(22px,4.6vw,30px);
+  line-height:1.3;
+  margin:0 0 20px;
+  font-weight:800;
+}
+.section-note{color:var(--ink-soft);margin:-8px 0 26px;max-width:40em}
+
+/* skills */
+.skills{list-style:none;margin:0;padding:0;display:grid;gap:12px;grid-template-columns:1fr}
+.skill{
+  display:flex;gap:14px;align-items:flex-start;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:15px 16px;
+}
+.skill .ic{
+  width:44px;height:44px;flex:none;border-radius:10px;
+  background:var(--navy);color:var(--coin);
+  display:grid;place-items:center;
+}
+.skill h3{margin:0 0 2px;font-size:17px;font-weight:700;line-height:1.35}
+.skill p{margin:0;font-size:15.5px;color:var(--ink-soft);line-height:1.5}
+
+/* games: a dark "screen" band */
+.screen{
+  margin-top:52px;
+  padding:48px 0 56px;
+  background-color:var(--navy);
+  background-image:radial-gradient(rgba(255,255,255,.09) 1.5px,transparent 1.5px);
+  background-size:20px 20px;
+  color:#fff;
+}
+.screen .section-note{color:#c5d3e6}
+.games{list-style:none;margin:0;padding:0;display:grid;gap:16px;grid-template-columns:repeat(2,1fr)}
+.game{
+  background:var(--paper);
+  color:var(--ink);
+  border:2px solid var(--ink);
+  border-radius:var(--radius);
+  box-shadow:4px 4px 0 var(--coin);
+  padding:16px 14px 14px;
+  display:flex;flex-direction:column;align-items:center;gap:10px;
+  transition:transform .15s ease, box-shadow .15s ease;
+}
+.game:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--coin)}
+.game .num{
+  font-family:"Press Start 2P",monospace;
+  font-size:22px;line-height:1;
+  color:var(--navy);
+  direction:ltr;
+}
+.game .gi{color:var(--coin-dark)}
+.game .name{font-weight:700;font-size:16px;line-height:1.2}
+.btn{
+  position:relative;
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;
+  min-height:44px;
+  padding:8px 16px;
+  background:var(--coin);
+  color:var(--ink);
+  font-weight:800;font-size:16px;
+  text-decoration:none;
+  border:2px solid var(--ink);
+  border-radius:10px;
+  box-shadow:0 3px 0 var(--ink);
+  transition:transform .1s ease, box-shadow .1s ease, background .15s ease;
+}
+.btn:hover{background:#ffc928}
+.btn:active{transform:translateY(3px);box-shadow:0 0 0 var(--ink)}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--coin);outline-offset:3px}
+.btn .icon{width:18px;height:18px}
+
+/* continue at home */
+.home{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:22px;
+}
+.home p{margin:0 0 16px;max-width:38em}
+.home .btn{width:auto;direction:ltr}
+
+/* footer: small */
+footer{margin-top:48px;border-top:1px solid var(--line);padding:18px 0 26px}
+.foot-row{display:flex;align-items:center;gap:14px}
+.foot-text{font-size:14px;line-height:1.5;color:var(--ink-soft)}
+.foot-text p{margin:0}
+.foot-text a{font-weight:700;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--coin);direction:ltr;display:inline-block;margin-top:2px}
+
+/* motion (JS only) */
+.js .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease, transform .5s ease;transition-delay:var(--d,0ms)}
+.js .reveal.in{opacity:1;transform:none}
+.js .hero-in{opacity:0;transform:translateY(10px);animation:heroIn .6s ease forwards;animation-delay:var(--d,0ms)}
+@keyframes heroIn{to{opacity:1;transform:none}}
+
+@media (min-width:640px){
+  body{font-size:18px}
+  .hero{padding:64px 0 12px}
+  .skills{grid-template-columns:repeat(2,1fr);gap:14px}
+  .games{grid-template-columns:repeat(3,1fr);gap:20px}
+  .logo.top img{width:72px}
+}
+@media (min-width:900px){
+  .games{grid-template-columns:repeat(5,1fr)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .reveal,.js .hero-in{opacity:1;transform:none;transition:none;animation:none}
+  .lead mark,.js .lead mark{transition:none;background-size:100% 40%}
+  .game,.btn{transition:none}
+}
+
+/* activity heads */
+.activity{padding:56px 0 0}
+.act-tag{display:inline-block;font-size:13px;font-weight:800;letter-spacing:.04em;background:var(--navy);color:var(--coin);border-radius:6px;padding:3px 10px;margin:0 0 10px}
+.act-title{font-size:clamp(26px,5.6vw,38px);line-height:1.2;font-weight:800;margin:0 0 22px}
+.act-title .en{direction:ltr;display:inline-block}
+.grade{display:inline-block;font-weight:700;font-size:15px;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:3px 14px;margin:0}
+.hero h1{margin-bottom:14px}
+.hud-num{min-width:3ch}
+
+/* top summaries */
+.summary{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:20px 18px 22px;margin:0 0 18px}
+.summary .lead{font-size:clamp(17px,3.4vw,21px);margin-bottom:20px}
+.summary .act-title{font-size:clamp(23px,5vw,32px);margin-bottom:14px}
+.sum-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn.jump{width:auto;min-width:170px}
+.part-head{margin:40px 0 0;font-size:clamp(20px,4.4vw,26px);font-weight:800;display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding-top:22px;border-top:8px solid transparent;border-image:repeating-linear-gradient(90deg,rgba(18,38,63,.14) 0 8px,transparent 8px 16px) 8}
+.part-head .act-tag{margin:0}
+#games,#vibe-games{scroll-margin-top:12px}
+.activity{padding-top:34px}
+
+/* how it works strip */
+.flow{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:10px;grid-template-columns:1fr}
+.step{position:relative;background:var(--paper);border:2px solid var(--ink);border-radius:var(--radius);box-shadow:4px 4px 0 var(--coin);padding:14px 16px;display:flex;gap:12px;align-items:flex-start}
+.step .n{font-family:"Press Start 2P",monospace;font-size:14px;color:var(--navy);direction:ltr;line-height:1.6}
+.step h3{margin:0;font-size:17px;font-weight:800}
+.step p{margin:0;font-size:15.5px;color:var(--ink-soft);line-height:1.5}
+
+/* example card */
+.example{display:grid;gap:18px;grid-template-columns:1fr;align-items:center;background:var(--paper);color:var(--ink);border:2px solid var(--ink);border-radius:var(--radius);box-shadow:5px 5px 0 var(--coin);padding:14px}
+.example img{display:block;width:100%;height:auto;border-radius:10px;border:2px solid var(--ink);background:#0b1220}
+.example h3{margin:0 0 6px;font-size:20px;font-weight:800}
+.example p{margin:0 0 16px;color:var(--ink-soft)}
+.tag-mini{display:inline-block;font-size:13px;font-weight:700;color:var(--navy);background:#fff3c4;border-radius:6px;padding:1px 8px;margin-bottom:8px}
+
+/* prompt box */
+.prompt{position:relative;margin:4px 0 16px;background:var(--navy);color:#eef3fa;border-radius:12px;border-bottom:4px solid var(--coin);padding:16px 16px 14px}
+.prompt pre{margin:0 0 12px;white-space:pre-wrap;word-break:break-word;font-family:"Heebo",system-ui,sans-serif;font-size:16px;line-height:1.7}
+.copy{width:auto}
+.copy.done{background:#c9f0c0}
+.home p+p{margin-top:0}
+.home .tip{font-size:15.5px;color:var(--ink-soft)}
+.divider{height:8px;margin:56px 0 0;background:repeating-linear-gradient(90deg,var(--ink) 0 8px,transparent 8px 16px);opacity:.14}
+
+@media (min-width:640px){
+  .flow{grid-template-columns:repeat(3,1fr);gap:14px}
+  .example{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);padding:18px;gap:26px}
+  .example .btn{width:auto;min-width:160px}
+}
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <p class="school"><strong>בית ספר יעקב כהן, קריית אונו</strong> · מדריכה: שירה</p>
+    <a class="logo top" href="https://d-world.co.il" aria-label="Tech4Kids"><img src="../assets/logo.png" alt="Tech4Kids" width="240" height="216"></a>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap">
+      <h1 class="hero-in">סיכום פעילות: תלמידים במסלול טכנולוגי</h1>
+      <p class="grade hero-in" style="--d:80ms">שכבת ו'</p>
+    </div>
+  </div>
+
+  <!-- ===== Summaries: both activities at the top ===== -->
+  <section class="activity" id="arcade">
+    <div class="wrap">
+      <div class="summary hero-in" style="--d:120ms">
+        <p class="act-tag">פעילות 1</p>
+        <h2 class="act-title">מהנדסי משחקים: פיתוח משחק מחשב מאפס</h2>
+        <p class="label">מה בנו התלמידים</p>
+        <p class="lead">התלמידים פיתחו משחקי מחשב בפלטפורמת <span dir="ltr">MakeCode Arcade</span>, בנושא מלחמת הכוכבים. אלה משחקים מורכבים: יש בהם אויבים, ניקוד, חיים וצלילים, והם <mark>בנויים מהרבה מאוד בלוקים של קוד שעובדים יחד</mark>. לפני שבנו, תכננו איך המשחק יתנהג ומה קורה בכל מצב. יצאו <mark>יותר מ-25 משחקים</mark>, וכל אחד שונה מהאחרים.</p>
+        <div class="sum-actions">
+          <div class="hud" aria-label="יותר מ-25 משחקים שנבנו"><span class="hud-num" id="count" data-to="25" data-suffix="+">25+</span><span class="hud-label">משחקים שנבנו</span></div>
+          <a class="btn jump" href="#games"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg><span>לשחק במשחקים</span></a>
+        </div>
+      </div>
+
+      <div class="summary hero-in" id="vibe" style="--d:220ms">
+        <p class="act-tag">פעילות 2</p>
+        <h2 class="act-title"><span class="en">Vibe Coding</span></h2>
+        <p class="label">מה בנו התלמידים</p>
+        <p class="lead">Vibe Coding היא דרך חדשה לפתח תוכנה, שנולדה רק בשנים האחרונות. במקום לכתוב קוד, מתארים לבינה המלאכותית במילים רגילות מה רוצים לבנות, והיא כותבת את הקוד. היום <mark>מי שיודע להסביר רעיון בבירור יכול לבנות משחק או אפליקציה</mark>. התלמידים עבדו כך ובנו כמה משחקים, ביניהם קליקרים, משחק פסנתר ומשחק כדור שקופץ בין סלים.</p>
+        <div class="sum-actions">
+          <a class="btn jump" href="#vibe-games"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg><span>לשחק בדוגמה</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Activity 1 details ===== -->
+  <div class="wrap"><p class="part-head reveal"><span class="act-tag">פעילות 1</span> מהנדסי משחקים</p></div>
+
+  <section id="arcade-skills">
+    <div class="wrap">
+      <h2 class="reveal">מה למדנו, ואילו מיומנויות התחזקו</h2>
+      <ul class="skills">
+        <li class="skill reveal">
+          <span class="ic"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg></span>
+          <div><h3>תכנות</h3><p>בנו אויבים, ניקוד, חיים וצלילים, וחיברו הרבה בלוקים של קוד למשחק אחד שעובד.</p></div>
+        </li>
+        <li class="skill reveal" style="--d:60ms">
+          <span class="ic"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg></span>
+          <div><h3>מבנה ותכנון</h3><p>חילקו משחק גדול לחלקים קטנים ובנו אותם אחד אחרי השני, מרעיון ועד משחק גמור.</p></div>
+        </li>
+        <li class="skill reveal">
+          <span class="ic"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6a9 9 0 0 0-9 9V3"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/></svg></span>
+          <div><h3>חשיבה לוגית</h3><p>הפכו חוקי משחק לתנאים ולסדר פעולות.</p></div>
+        </li>
+        <li class="skill reveal" style="--d:60ms">
+          <span class="ic"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"/><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/></svg></span>
+          <div><h3>עיצוב</h3><p>עיצבו את הדמויות והאויבים.</p></div>
+        </li>
+        <li class="skill reveal">
+          <span class="ic"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 13v8"/><path d="M12 3v3"/><path d="M2.354 10.354a1.207 1.207 0 0 1 0-1.708l2.06-2.06A2 2 0 0 1 5.828 6h12.344a2 2 0 0 1 1.414.586l2.06 2.06a1.207 1.207 0 0 1 0 1.708l-2.06 2.06a2 2 0 0 1-1.414.586H5.828a2 2 0 0 1-1.414-.586z"/></svg></span>
+          <div><h3>קבלת החלטות</h3><p>כל תלמיד בחר איך המשחק ייראה ואיך יתנהג.</p></div>
+        </li>
+        <li class="skill reveal" style="--d:60ms">
+          <span class="ic"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg></span>
+          <div><h3>פלטפורמות</h3><p>אותו משחק רץ במחשב ובנייד, ואפשר להוריד אותו.</p></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="games" class="screen">
+    <div class="wrap">
+      <h2 class="reveal">מוזמנים לשחק</h2>
+      <p class="section-note reveal">אלה המשחקים שהתלמידים פיתחו. כל משחק נפתח בלשונית חדשה.</p>
+      <ul class="games">
+        <li class="game reveal" style="--d:0ms"><span class="num">01</span><svg class="icon gi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg><span class="name">משחק 1</span><a class="btn" href="https://arcade.makecode.com/75518-30508-56089-14969" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg><span>שחקו</span><span class="sr"> במשחק 1</span></a></li>
+        <li class="game reveal" style="--d:50ms"><span class="num">02</span><svg class="icon gi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg><span class="name">משחק 2</span><a class="btn" href="https://arcade.makecode.com/44354-48408-48273-84932" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg><span>שחקו</span><span class="sr"> במשחק 2</span></a></li>
+        <li class="game reveal" style="--d:100ms"><span class="num">03</span><svg class="icon gi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg><span class="name">משחק 3</span><a class="btn" href="https://arcade.makecode.com/44100-06692-46397-09718" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg><span>שחקו</span><span class="sr"> במשחק 3</span></a></li>
+        <li class="game reveal" style="--d:150ms"><span class="num">04</span><svg class="icon gi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg><span class="name">משחק 4</span><a class="btn" href="https://arcade.makecode.com/23406-27615-57590-43962" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg><span>שחקו</span><span class="sr"> במשחק 4</span></a></li>
+        <li class="game reveal" style="--d:200ms"><span class="num">05</span><svg class="icon gi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg><span class="name">משחק 5</span><a class="btn" href="https://arcade.makecode.com/92770-10798-55003-14548" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg><span>שחקו</span><span class="sr"> במשחק 5</span></a></li>
+        <li class="game reveal" style="--d:0ms"><span class="num">06</span><svg class="icon gi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg><span class="name">משחק 6</span><a class="btn" href="https://arcade.makecode.com/81202-90984-28813-92093" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg><span>שחקו</span><span class="sr"> במשחק 6</span></a></li>
+        <li class="game reveal" style="--d:50ms"><span class="num">07</span><svg class="icon gi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg><span class="name">משחק 7</span><a class="btn" href="https://arcade.makecode.com/90254-26235-11029-31254" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg><span>שחקו</span><span class="sr"> במשחק 7</span></a></li>
+        <li class="game reveal" style="--d:100ms"><span class="num">08</span><svg class="icon gi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg><span class="name">משחק 8</span><a class="btn" href="https://arcade.makecode.com/40901-33930-46291-71547" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg><span>שחקו</span><span class="sr"> במשחק 8</span></a></li>
+        <li class="game reveal" style="--d:150ms"><span class="num">09</span><svg class="icon gi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg><span class="name">משחק 9</span><a class="btn" href="https://arcade.makecode.com/22115-50190-95862-59789" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg><span>שחקו</span><span class="sr"> במשחק 9</span></a></li>
+        <li class="game reveal" style="--d:200ms"><span class="num">10</span><svg class="icon gi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg><span class="name">משחק 10</span><a class="btn" href="https://arcade.makecode.com/72896-04134-21217-18956" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg><span>שחקו</span><span class="sr"> במשחק 10</span></a></li>
+        <li class="game reveal" style="--d:0ms"><span class="num">11</span><svg class="icon gi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg><span class="name">משחק 11</span><a class="btn" href="https://arcade.makecode.com/91899-02172-96167-41647" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg><span>שחקו</span><span class="sr"> במשחק 11</span></a></li>
+        <li class="game reveal" style="--d:50ms"><span class="num">12</span><svg class="icon gi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg><span class="name">משחק 12</span><a class="btn" href="https://arcade.makecode.com/12140-17958-54280-63255" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg><span>שחקו</span><span class="sr"> במשחק 12</span></a></li>
+        <li class="game reveal" style="--d:100ms"><span class="num">13</span><svg class="icon gi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg><span class="name">משחק 13</span><a class="btn" href="https://arcade.makecode.com/83872-43813-14344-53307" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg><span>שחקו</span><span class="sr"> במשחק 13</span></a></li>
+        <li class="game reveal" style="--d:150ms"><span class="num">14</span><svg class="icon gi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg><span class="name">משחק 14</span><a class="btn" href="https://arcade.makecode.com/77898-61618-58808-97942" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg><span>שחקו</span><span class="sr"> במשחק 14</span></a></li>
+        <li class="game reveal" style="--d:200ms"><span class="num">15</span><svg class="icon gi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg><span class="name">משחק 15</span><a class="btn" href="https://arcade.makecode.com/74618-98695-59753-45721" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg><span>שחקו</span><span class="sr"> במשחק 15</span></a></li>
+        <li class="game reveal" style="--d:0ms"><span class="num">16</span><svg class="icon gi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg><span class="name">משחק 16</span><a class="btn" href="https://arcade.makecode.com/12783-85449-99149-10106" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg><span>שחקו</span><span class="sr"> במשחק 16</span></a></li>
+        <li class="game reveal" style="--d:50ms"><span class="num">17</span><svg class="icon gi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg><span class="name">משחק 17</span><a class="btn" href="https://arcade.makecode.com/98422-11020-98651-84176" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg><span>שחקו</span><span class="sr"> במשחק 17</span></a></li>
+        <li class="game reveal" style="--d:100ms"><span class="num">18</span><svg class="icon gi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg><span class="name">משחק 18</span><a class="btn" href="https://arcade.makecode.com/82216-07791-88264-84798" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg><span>שחקו</span><span class="sr"> במשחק 18</span></a></li>
+        <li class="game reveal" style="--d:150ms"><span class="num">19</span><svg class="icon gi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg><span class="name">משחק 19</span><a class="btn" href="https://arcade.makecode.com/90419-53941-10887-77903" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg><span>שחקו</span><span class="sr"> במשחק 19</span></a></li>
+        <li class="game reveal" style="--d:200ms"><span class="num">20</span><svg class="icon gi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg><span class="name">משחק 20</span><a class="btn" href="https://arcade.makecode.com/85008-70929-39571-64471" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg><span>שחקו</span><span class="sr"> במשחק 20</span></a></li>
+        <li class="game reveal" style="--d:0ms"><span class="num">21</span><svg class="icon gi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg><span class="name">משחק 21</span><a class="btn" href="https://arcade.makecode.com/04744-08380-75554-98285" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg><span>שחקו</span><span class="sr"> במשחק 21</span></a></li>
+        <li class="game reveal" style="--d:50ms"><span class="num">22</span><svg class="icon gi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg><span class="name">משחק 22</span><a class="btn" href="https://arcade.makecode.com/51660-38796-29948-08044" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg><span>שחקו</span><span class="sr"> במשחק 22</span></a></li>
+        <li class="game reveal" style="--d:100ms"><span class="num">23</span><svg class="icon gi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg><span class="name">משחק 23</span><a class="btn" href="https://arcade.makecode.com/51857-69240-65508-77655" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg><span>שחקו</span><span class="sr"> במשחק 23</span></a></li>
+        <li class="game reveal" style="--d:150ms"><span class="num">24</span><svg class="icon gi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg><span class="name">משחק 24</span><a class="btn" href="https://arcade.makecode.com/40138-31781-02483-18285" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg><span>שחקו</span><span class="sr"> במשחק 24</span></a></li>
+        <li class="game reveal" style="--d:200ms"><span class="num">25</span><svg class="icon gi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg><span class="name">משחק 25</span><a class="btn" href="https://arcade.makecode.com/37744-45457-70409-94484" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg><span>שחקו</span><span class="sr"> במשחק 25</span></a></li>
+        <li class="game reveal" style="--d:0ms"><span class="num">26</span><svg class="icon gi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg><span class="name">משחק 26</span><a class="btn" href="https://arcade.makecode.com/10761-12153-28858-80769" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg><span>שחקו</span><span class="sr"> במשחק 26</span></a></li>
+        <li class="game reveal" style="--d:50ms"><span class="num">27</span><svg class="icon gi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg><span class="name">משחק 27</span><a class="btn" href="https://arcade.makecode.com/63259-20691-65908-92184" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg><span>שחקו</span><span class="sr"> במשחק 27</span></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="arcade-home">
+    <div class="wrap">
+      <h2 class="reveal">ממשיכים בבית</h2>
+      <div class="home reveal">
+        <p><span dir="ltr">MakeCode Arcade</span> חינמי ורץ בדפדפן. אפשר לפתוח כל משחק, לראות את הקוד ולשנות אותו, או להתחיל משחק חדש.</p>
+        <a class="btn" href="https://arcade.makecode.com" target="_blank" rel="noopener"><span>arcade.makecode.com</span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Activity 2 details ===== -->
+  <div class="wrap"><p class="part-head reveal"><span class="act-tag">פעילות 2</span> <span dir="ltr">Vibe Coding</span></p></div>
+
+  <section id="flow">
+    <div class="wrap">
+      <h2 class="reveal">איך זה עובד</h2>
+      <ol class="flow">
+        <li class="step reveal"><span class="n">1</span><div><h3>רעיון</h3><p>מה רוצים לבנות.</p></div></li>
+        <li class="step reveal" style="--d:80ms"><span class="n">2</span><div><h3>פרומפט</h3><p>מתארים את הרעיון במילים מדויקות.</p></div></li>
+        <li class="step reveal" style="--d:160ms"><span class="n">3</span><div><h3>משחק</h3><p>ה-AI כותב את הקוד, ואנחנו בודקים ומשפרים.</p></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="vibe-skills">
+    <div class="wrap">
+      <h2 class="reveal">מה למדנו, ואילו מיומנויות התחזקו</h2>
+      <ul class="skills">
+        <li class="skill reveal">
+          <span class="ic"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z"/><path d="m15 5 4 4"/></svg></span>
+          <div><h3>כתיבת פרומפט</h3><p>ניסחו הוראה מדויקת: מה המשחק עושה, איך הוא נראה ולמי הוא מיועד.</p></div>
+        </li>
+        <li class="skill reveal" style="--d:60ms">
+          <span class="ic"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <div><h3>גבולות ובטיחות</h3><p>למדו מה הבינה המלאכותית לא יודעת לעשות, ואיך עובדים איתה בזהירות.</p></div>
+        </li>
+        <li class="skill reveal">
+          <span class="ic"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg></span>
+          <div><h3>ניסוי ושיפור</h3><p>כשהתוצאה לא טובה, מנסחים מחדש ומנסים שוב.</p></div>
+        </li>
+        <li class="skill reveal" style="--d:60ms">
+          <span class="ic"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72"/><path d="m14 7 3 3"/><path d="M5 6v4"/><path d="M19 14v4"/><path d="M10 2v2"/><path d="M7 8H3"/><path d="M21 16h-4"/><path d="M11 3H9"/></svg></span>
+          <div><h3>מילים שהופכות לקוד</h3><p>הבינו שה-AI מתרגם תיאור במילים לקוד שהמחשב מריץ.</p></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="vibe-games" class="screen">
+    <div class="wrap">
+      <h2 class="reveal">מוזמנים לשחק: דוגמה אחת</h2>
+      <div class="example reveal">
+        <img src="vibe-example.jpg" alt="צילום מסך מהמשחק: כדור זהב קופץ בין סלים, עם ניקוד בראש המסך" width="600" height="598">
+        <div>
+          <span class="tag-mini">נבנה בעזרת פרומפט</span>
+          <h3>כדור הזהב ביער</h3>
+          <p>כדור קופץ בין סלים זזים, וכל נחיתה בסל מוסיפה נקודות.</p>
+          <a class="btn" href="https://guileless-truffle-4a0fc5.netlify.app" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"/></svg><span>שחקו</span><span class="sr"> בכדור הזהב ביער</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="vibe-home">
+    <div class="wrap">
+      <h2 class="reveal">ממשיכים בבית, יחד עם ההורים</h2>
+      <div class="home reveal">
+        <p>אפשר לנסות את זה בבית, ביחד. פותחים צ'אטבוט כמו Gemini, ChatGPT או Claude, ומדביקים פרומפט כמו זה:</p>
+        <div class="prompt">
+          <pre id="prompt">צור לי משחק בקובץ HTML אחד, בעברית.
+המשחק: 4 כפתורים גדולים בצבעים שונים. המחשב מדליק אותם ברצף, והשחקן צריך ללחוץ עליהם באותו סדר.
+בכל סיבוב הרצף מתארך בכפתור אחד.
+אם טועים, מופיעה הודעה עם הניקוד וכפתור &quot;שחק שוב&quot;.
+עיצוב צבעוני ונעים, עם כפתורים גדולים שנוחים גם בטלפון.</pre>
+          <button class="btn copy" type="button" id="copyBtn"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c0-1.1.9-2 2-2h2"/><path d="M4 8c0-1.1.9-2 2-2h8c1.1 0 2 .9 2 2"/></svg><span>העתיקו את הפרומפט</span></button>
+        </div>
+        <p class="tip">רוב הצ'אטבוטים מציגים את המשחק ישר בשיחה, או נותנים קובץ להורדה שפותחים בדפדפן. לא מרוצים מהתוצאה? כותבים מה לשנות, למשל "תוסיף צלילים" או "תעשה את המשחק מהיר יותר".</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-row">
+    <a class="logo foot" href="https://d-world.co.il" aria-label="Tech4Kids"><img src="../assets/logo.png" alt="Tech4Kids" width="240" height="216"></a>
+    <div class="foot-text">
+      <p>Tech4Kids - מסלולי טכנולוגיה לילדים</p>
+      <a href="https://d-world.co.il">d-world.co.il</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  window.addEventListener('load',function(){setTimeout(function(){root.classList.add('ready')},80)});
+
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')})}
+  else{
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}});
+    },{threshold:.12,rootMargin:'0px 0px -30px 0px'});
+    els.forEach(function(e){io.observe(e)});
+  }
+
+  var c=document.getElementById('count');
+  if(c&&!reduce){
+    var to=parseInt(c.getAttribute('data-to'),10),suf=c.getAttribute('data-suffix')||'',n=0;
+    c.textContent='0';
+    setTimeout(function(){
+      var t=setInterval(function(){
+        n++;c.textContent=String(n)+(n>=to?suf:'');
+        if(n>=to){clearInterval(t)}
+      },55);
+    },700);
+  }
+
+  var b=document.getElementById('copyBtn'),p=document.getElementById('prompt');
+  if(b&&p){
+    b.addEventListener('click',function(){
+      var txt=p.textContent,label=b.querySelector('span');
+      function ok(){label.textContent='הועתק';b.classList.add('done');setTimeout(function(){label.textContent='העתיקו את הפרומפט';b.classList.remove('done')},2000)}
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(ok,fallback)}else{fallback()}
+      function fallback(){
+        var r=document.createRange();r.selectNodeContents(p);var s=window.getSelection();s.removeAllRanges();s.addRange(r);
+        try{document.execCommand('copy');ok()}catch(e){}
+      }
+    });
+  }
+})();
+</script>
+</body>
+</html>
