@@ -236,3 +236,4 @@ p { font-size: clamp(1.03rem, .99rem + .2vw, 1.16rem); line-height: 1.7; margin:
 .bar { transition: background-color 200ms var(--sc-ease-out), box-shadow 200ms var(--sc-ease-out); }
 .bar.is-solid { background: rgba(31, 20, 56, .96); }
 .bar.is-solid.is-light { background: rgba(250, 246, 238, .96); box-shadow: 0 1px 0 var(--sc-hairline); }
+.grades { font-size: 1rem; color: var(--sc-ink-soft); }
