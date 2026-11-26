@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>תוצרי תלמידים - מגן | Tech4Kids</title>
+<meta name="description" content="סיכום פעילות בבית ספר מגן: תוכנית האקדמיה למתכנתים צעירים בכיתות ד', פיתוח משחקי מחשב בסגנון ארקייד בכיתות ו', ו-Vibe Coding בכיתות ה'-ו'. מוזמנים לצפות.">
+<meta name="theme-color" content="#0d2b4d">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="he_IL">
+<meta property="og:site_name" content="Tech4Kids">
+<meta property="og:title" content="תוצרי תלמידים - מגן | Tech4Kids">
+<meta property="og:description" content="תלמידי ד'-ו' בבית ספר מגן למדו תכנות ופיתחו בעזרת בינה מלאכותית. מוזמנים לצפות.">
+<meta property="og:image" content="https://kotlermike-net-ai.github.io/tech4kids-schools/assets/og-tech4kids.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://kotlermike-net-ai.github.io/tech4kids-schools/magen-fxzy/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800;900&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#faf6ee;
+  --paper:#ffffff;
+  --ink:#12263f;
+  --ink-soft:#44587a;
+  --navy:#0d2b4d;
+  --navy-deep:#081f3a;
+  --tint:#e8eef6;
+  --coin:#f2b705;
+  --line:#e2d9c6;
+  --line-b:#c9d5e4;
+  --r:12px;
+  --ease:cubic-bezier(0.23,1,0.32,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Heebo","Assistant",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
+  caret-color:var(--navy);accent-color:var(--coin);overflow-x:hidden;
+}
+::selection{background:var(--coin);color:var(--ink)}
+a{color:inherit}
+img,video{display:block;max-width:100%;height:auto}
+h1,h2,h3,h4{text-wrap:balance;letter-spacing:-.01em}
+p,li{text-wrap:pretty}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+.icon{width:22px;height:22px;flex:none}
+.sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);clip-path:inset(50%);white-space:nowrap;border:0}
+.tv__num b,.step-n,.dot{font-variant-numeric:tabular-nums}
+a:focus-visible,button:focus-visible,.tv__screen:focus-visible{outline:3px solid var(--coin);outline-offset:3px;border-radius:var(--r)}
+.ibox{
+  width:44px;height:44px;flex:none;display:grid;place-items:center;
+  background:var(--navy);color:#fff;border-radius:var(--r);
+}
+.ibox .icon{width:22px;height:22px}
+
+/* ---------- shell: top bar ---------- */
+.topbar{border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:10px;padding-bottom:10px}
+.school{font-size:14px;color:var(--ink-soft);margin:0}
+.school strong{color:var(--ink);font-weight:700}
+.logo{display:block;line-height:0;border-radius:8px;overflow:hidden;flex:none}
+.logo.top img{width:64px}
+.logo.foot img{width:52px}
+
+/* ---------- hero: the school, big ---------- */
+.hero{padding:36px 0 20px}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:28px;align-items:center}
+.hero h1{margin:0;font-weight:800;line-height:1.1}
+.h1-school{
+  display:block;
+  font-size:clamp(52px,15vw,96px);font-weight:900;white-space:nowrap;
+  letter-spacing:-.035em;line-height:1;
+}
+.h1-school .nm{position:relative;display:inline-block}
+.h1-school .nm::after{
+  content:"";position:absolute;left:-2%;right:-2%;bottom:.04em;height:.2em;z-index:-1;
+  background:var(--coin);border-radius:4px;
+  transform-origin:100% 50%;
+}
+.h1-school{position:relative;z-index:0}
+.h1-sub{display:block;margin-top:16px;font-size:clamp(20px,5vw,28px);font-weight:700;letter-spacing:-.01em;line-height:1.3}
+.hero-meta{margin:14px 0 0;color:var(--ink-soft);font-size:16px}
+.hero-pic{margin:0;position:relative;max-width:420px;justify-self:center;width:100%}
+.hero-pic img{
+  width:100%;aspect-ratio:4/3;object-fit:cover;
+  border:2px solid var(--ink);border-radius:var(--r);
+  box-shadow:6px 6px 0 var(--navy);background:#e9e2d3;
+}
+
+/* grade menu: rows */
+.menu{list-style:none;margin:28px 0 0;padding:0;border-top:2px solid var(--ink)}
+.menu a{
+  display:flex;align-items:center;gap:14px;
+  padding:12px 2px;text-decoration:none;border-bottom:1px solid var(--line);
+}
+.menu .g{font-weight:800;font-size:17px;white-space:nowrap}
+.menu .t{color:var(--ink-soft);font-size:15.5px;flex:1;line-height:1.35}
+.menu .chev{width:20px;height:20px;color:var(--navy);flex:none;transition:transform .16s var(--ease)}
+.menu a:active .chev{transform:translateX(-3px)}
+
+/* ---------- activity blocks ---------- */
+.act{padding:72px 0 64px}
+.act h2{font-size:clamp(26px,6.4vw,40px);line-height:1.2;font-weight:800;margin:0 0 18px}
+.grade{
+  display:inline-block;background:var(--navy);color:#fff;
+  font-size:.5em;font-weight:700;letter-spacing:0;
+  padding:4px 12px 5px;border-radius:var(--r);
+  vertical-align:.3em;margin-inline-end:8px;white-space:nowrap;
+}
+.lead{font-size:clamp(18px,3.9vw,21px);line-height:1.7;max-width:36em;margin:0}
+.act h3{font-size:clamp(20px,4.6vw,25px);line-height:1.3;font-weight:800;margin:48px 0 16px}
+.soft{color:var(--ink-soft)}
+.tinted{background:var(--tint)}
+
+/* grade 4 layout */
+.g4-grid{display:grid;grid-template-columns:1fr;gap:28px;margin-top:8px}
+.shot{margin:0;max-width:420px}
+.shot img{
+  width:100%;aspect-ratio:4/3;object-fit:cover;
+  border:2px solid var(--ink);border-radius:var(--r);
+  box-shadow:5px 5px 0 var(--ink);background:#e9e2d3;
+}
+.shot figcaption{font-size:14px;color:var(--ink-soft);margin-top:10px}
+.game-note{display:flex;gap:10px;align-items:center;margin:0 0 16px;font-weight:500}
+.game-note .icon{color:var(--navy)}
+
+/* command strip: blocks that lock together */
+.strip{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.blk{
+  position:relative;display:flex;gap:14px;align-items:center;
+  background:var(--paper);color:var(--ink);
+  border:2px solid var(--ink);border-radius:var(--r);
+  padding:12px 14px 13px;
+}
+.blk + .blk{margin-top:-2px}
+.blk + .blk::before{
+  content:"";position:absolute;top:-2px;inset-inline-start:30px;
+  width:30px;height:10px;background:var(--paper);
+  border:2px solid var(--ink);border-top:0;border-radius:0 0 8px 8px;
+}
+.blk .ibox{width:40px;height:40px}
+.blk b{display:block;font-size:18px;line-height:1.3}
+.blk div span{display:block;font-size:15.5px;line-height:1.45;color:var(--ink-soft)}
+
+/* skills with icons, no boxes */
+.iskills{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr;gap:0 40px}
+.iskills li{display:flex;gap:14px;align-items:center;padding:12px 0;border-top:1px solid var(--line);font-size:17.5px;font-weight:500}
+.iskills .icon{color:var(--navy);width:26px;height:26px}
+.after{margin:20px 0 0;color:var(--ink-soft)}
+
+/* grade 6: in the game / in life */
+.life{
+  background:var(--paper);border:2px solid var(--ink);border-radius:var(--r);
+  box-shadow:6px 6px 0 var(--navy);overflow:hidden;
+}
+.life-head{display:none}
+.row{padding:16px 16px 18px;border-top:1px solid var(--line-b)}
+.life-head + .row{border-top:0}
+.c-name{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.c-name b{font-size:19px;line-height:1.25}
+.c-game,.c-life{font-size:16px;line-height:1.5;padding-inline-start:56px}
+.c-life{margin-top:6px;color:var(--navy)}
+.lab{font-weight:800;margin-inline-end:4px}
+.c-life .lab{color:var(--navy)}
+.beyond{margin:28px 0 0;font-size:18px;max-width:38em}
+.beyond b{font-weight:800}
+.note{margin:18px 0 0;font-size:18px;font-weight:500}
+
+/* grade 5-6 */
+.story{
+  margin:30px 0 0;max-width:34em;
+  font-size:clamp(19px,4vw,23px);line-height:1.6;font-weight:500;
+  border-inline-start:5px solid var(--coin);
+  padding:2px 18px 2px 0;
+}
+.story p{margin:0}
+.big h4{font-size:clamp(28px,7vw,40px);line-height:1.15;font-weight:900;margin:0 0 10px;letter-spacing:-.02em}
+.big p{margin:0;font-size:18px;max-width:32em}
+
+.prompts{display:grid;grid-template-columns:1fr;gap:20px;margin:28px 0 0}
+.pr{border:2px solid var(--ink);border-radius:var(--r);padding:16px 16px 18px;background:var(--paper)}
+.pr.strong{box-shadow:6px 6px 0 var(--navy)}
+.pr.weak{background:transparent;border-style:dashed;border-color:#7d8da6}
+.pr-head{display:flex;align-items:center;gap:8px;font-weight:800;font-size:17px;margin:0 0 12px}
+.pr-head .mark{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;flex:none}
+.weak .mark{background:#dfe5ee;color:var(--ink)}
+.strong .mark{background:var(--navy);color:#fff}
+.pr-head .icon{width:16px;height:16px}
+.bubble{
+  position:relative;margin:0 0 12px;
+  background:var(--tint);border-radius:var(--r) var(--r) 4px var(--r);
+  padding:12px 14px;font-size:17px;line-height:1.55;font-weight:500;
+}
+.weak .bubble{background:#eef1f5}
+.ghost{visibility:hidden}
+.typed{position:absolute;inset:12px 14px}
+.caret{display:inline-block;width:2px;height:1.05em;background:var(--navy);vertical-align:-.15em;margin-inline-start:1px}
+.pr-out{margin:0;font-size:16px;color:var(--ink-soft)}
+.pr-out b{color:var(--ink)}
+.small-skills{list-style:none;margin:32px 0 0;padding:0;display:grid;grid-template-columns:1fr;gap:0 40px}
+.small-skills li{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-top:1px solid var(--line)}
+.small-skills .icon{color:var(--navy);width:26px;height:26px;margin-top:2px}
+.small-skills b{display:block;font-size:18px}
+
+/* ---------- the peak: TV with channels ---------- */
+.band{
+  margin-top:72px;padding:56px 0 64px;
+  background-color:var(--navy);color:#fff;position:relative;isolation:isolate;
+}
+.band::after{
+  content:"";position:absolute;inset:0;z-index:-1;opacity:.04;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.band h3{font-size:clamp(30px,7.4vw,46px);line-height:1.15;font-weight:900;margin:0 0 8px;color:#fff;letter-spacing:-.02em}
+.band .intro{color:#c9d6e8;margin:0 0 28px;max-width:34em}
+.tv{display:grid;grid-template-columns:1fr;gap:18px;align-items:start}
+.tv__body{background:#e9e1cf;border:2px solid var(--ink);border-radius:var(--r);box-shadow:6px 6px 0 var(--navy-deep);padding:12px}
+.tv__screen{
+  position:relative;overflow:hidden;aspect-ratio:4/3;background:#0a1626;
+  border:2px solid var(--ink);border-radius:var(--r);touch-action:pan-y;cursor:grab;
+}
+.tv__glass{position:absolute;inset:0;transform-origin:50% 50%}
+.ch{position:absolute;inset:0;opacity:0;visibility:hidden}
+.ch.on{opacity:1;visibility:visible}
+.ch video,.ch img{width:100%;height:100%;object-fit:cover}
+.tv__flash{position:absolute;left:0;right:0;top:50%;height:2px;margin-top:-1px;background:#fff;opacity:0;pointer-events:none}
+.tv__num{
+  position:absolute;top:10px;inset-inline-end:10px;display:flex;align-items:center;gap:8px;
+  background:rgba(8,31,58,.82);color:#fff;font-size:13px;font-weight:700;padding:6px 10px;border-radius:8px;
+}
+.tv__num b{font-family:"Press Start 2P",monospace;font-size:14px;color:var(--coin);font-weight:400;line-height:1}
+.tv__feet{display:flex;justify-content:space-between;padding:10px 18% 0}
+.tv__feet i{display:block;width:14px;height:8px;background:var(--ink);border-radius:0 0 4px 4px}
+.tv__title{font-size:24px;font-weight:800;margin:0 0 4px;line-height:1.3}
+.tv__desc{margin:0 0 18px;color:#c9d6e8;max-width:28em;min-height:3.3em}
+.ctrl{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.dots{display:flex;gap:8px}
+.dot{
+  width:44px;height:44px;display:grid;place-items:center;
+  font-family:"Press Start 2P",monospace;font-size:13px;
+  background:transparent;color:#fff;border:2px solid #9fb3cf;border-radius:var(--r);cursor:pointer;
+  transition:transform .14s var(--ease),background-color .14s var(--ease),border-color .14s var(--ease);
+}
+.dot[aria-current="true"]{background:#fff;color:var(--navy);border-color:#fff}
+.dot:active{transform:scale(.97)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  min-height:44px;padding:8px 18px;background:var(--coin);color:var(--ink);
+  font:inherit;font-weight:800;font-size:16px;white-space:nowrap;text-decoration:none;
+  border:2px solid var(--ink);border-radius:var(--r);box-shadow:3px 3px 0 var(--navy-deep);cursor:pointer;
+  transition:transform .14s var(--ease),box-shadow .14s var(--ease);
+}
+.btn .icon{width:18px;height:18px}
+.btn:active{transform:scale(.97);box-shadow:1px 1px 0 var(--navy-deep)}
+.hint{font-size:14px;color:#a9bbd4;margin:14px 0 0}
+
+/* ---------- continue at home (AI) ---------- */
+.home{padding:72px 0 8px}
+.home h2{font-size:clamp(26px,6.4vw,40px);line-height:1.2;font-weight:800;margin:0 0 6px}
+.home .sub{margin:0 0 28px;color:var(--ink-soft);font-size:18px}
+.home-grid{display:grid;grid-template-columns:1fr;gap:36px;align-items:start}
+.steps{list-style:none;margin:0;padding:0;max-width:34em}
+.steps li{display:flex;gap:14px;padding:13px 0;border-top:1px solid var(--line)}
+.steps li:last-child{border-bottom:1px solid var(--line)}
+.step-n{font-family:"Press Start 2P",monospace;font-size:13px;color:var(--navy);line-height:1;padding-top:7px;flex:none;width:18px}
+.tpl{background:var(--paper);border:2px solid var(--ink);border-radius:var(--r);box-shadow:5px 5px 0 var(--ink);padding:16px}
+.tpl h3{margin:0 0 10px;font-size:18px;font-weight:800}
+.tpl pre{
+  margin:0 0 14px;white-space:pre-wrap;font:inherit;font-size:16.5px;line-height:1.6;
+  background:var(--tint);border-radius:var(--r);padding:12px 14px;
+}
+.tpl pre mark{background:none;color:var(--navy);font-weight:800}
+.tpl .btn{box-shadow:3px 3px 0 var(--ink)}
+.tpl .btn:active{box-shadow:1px 1px 0 var(--ink)}
+.copied{font-size:15px;color:var(--ink-soft);margin-inline-start:10px;opacity:0;transition:opacity .2s var(--ease)}
+.copied.show{opacity:1}
+.land{
+  margin:56px 0 0;padding:26px 0 0;border-top:2px solid var(--ink);
+  font-size:clamp(24px,6vw,34px);line-height:1.25;font-weight:900;letter-spacing:-.02em;max-width:20em;
+}
+
+/* ---------- shell: footer ---------- */
+footer{margin-top:56px;border-top:1px solid var(--line);padding:18px 0 26px}
+.foot-row{display:flex;align-items:center;gap:14px}
+.foot-text{font-size:14px;line-height:1.5;color:var(--ink-soft)}
+.foot-text p{margin:0}
+.foot-text a{font-weight:700;color:var(--ink);text-decoration:none;border-bottom:2px solid var(--navy);direction:ltr;display:inline-block;margin-top:2px}
+
+/* ---------- motion (JS on only) ---------- */
+.js .reveal{opacity:0;transform:scale(.95);transition:opacity .3s var(--ease),transform .3s var(--ease);transition-delay:var(--d,0ms)}
+.js .reveal.in{opacity:1;transform:none}
+.js .rise{opacity:0;transform:translateY(16px) scale(.97);animation:rise .3s var(--ease) forwards;animation-delay:var(--d,0ms)}
+@keyframes rise{to{opacity:1;transform:none}}
+.js .h1-school .nm::after{transform:scaleX(0);transition:transform .3s var(--ease) .45s}
+.js.ready .h1-school .nm::after{transform:scaleX(1)}
+.js .hero-pic{opacity:0;transform:scale(.95) rotate(-1.5deg);transition:opacity .3s var(--ease) .2s,transform .3s var(--ease) .2s}
+.js.ready .hero-pic{opacity:1;transform:rotate(-1.5deg)}
+/* staggered children */
+.js .stg > *{opacity:0;transform:translateY(-10px) scale(.95);transition:opacity .28s var(--ease),transform .28s var(--ease)}
+.js .stg.in > *{opacity:1;transform:none}
+.js .stg.in > *:nth-child(2){transition-delay:70ms}
+.js .stg.in > *:nth-child(3){transition-delay:140ms}
+.js .stg.in > *:nth-child(4){transition-delay:210ms}
+.js .stg.in > *:nth-child(5){transition-delay:280ms}
+.js .stg.in > *:nth-child(6){transition-delay:350ms}
+.js .stg.in > *:nth-child(7){transition-delay:420ms}
+.js .stg.in > *:nth-child(8){transition-delay:490ms}
+/* in-life line slides in after its row */
+.js .row .c-life{opacity:0;transform:translateX(12px);transition:opacity .3s var(--ease) .18s,transform .3s var(--ease) .18s}
+.js .row.in .c-life{opacity:1;transform:none}
+.js .row{opacity:0;transform:scale(.97);transition:opacity .3s var(--ease),transform .3s var(--ease)}
+.js .row.in{opacity:1;transform:none}
+.tv__glass.off{transform:scaleY(.02);opacity:.5;transition:transform .12s var(--ease),opacity .12s var(--ease)}
+.tv__glass.back{transition:transform .24s var(--ease),opacity .24s var(--ease)}
+.tv__flash.go{animation:flash .32s var(--ease)}
+@keyframes flash{0%{opacity:0}30%{opacity:.9}100%{opacity:0}}
+.tv__title,.tv__desc{transition:opacity .2s var(--ease)}
+.panel-out .tv__title,.panel-out .tv__desc{opacity:0;transition-duration:.1s}
+.typing .caret{animation:blink .9s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+@media (hover:hover) and (pointer:fine){
+  .menu a:hover .chev{transform:translateX(-4px)}
+  .menu a:hover .g{color:var(--navy)}
+  .btn:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--navy-deep)}
+  .tpl .btn:hover{box-shadow:4px 4px 0 var(--ink)}
+  .dot:hover{border-color:#fff}
+  .foot-text a:hover{border-color:var(--coin)}
+}
+
+@media (max-width:859px){
+  .hero-pic{max-width:300px}
+}
+@media (min-width:640px){
+  body{font-size:18px}
+  .iskills{grid-template-columns:1fr 1fr}
+  .small-skills{grid-template-columns:1fr 1fr}
+  .prompts{grid-template-columns:1fr 1fr;align-items:stretch}
+  .logo.top img{width:72px}
+}
+@media (min-width:860px){
+  .hero{padding:56px 0 24px}
+  .hero-grid{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:48px}
+  .h1-school{font-size:clamp(64px,7.4vw,92px)}
+  .g4-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:start}
+  .life-head{
+    display:grid;grid-template-columns:200px 1fr 1fr;gap:24px;
+    padding:12px 20px;background:var(--navy);color:#fff;font-weight:800;font-size:16px;
+  }
+  .row{display:grid;grid-template-columns:200px 1fr 1fr;gap:24px;align-items:center;padding:16px 20px}
+  .c-name{margin:0}
+  .c-game,.c-life{padding:0;margin:0}
+  .lab{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);clip-path:inset(50%);white-space:nowrap}
+  .tv{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:40px;align-items:center}
+  .home-grid{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:56px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .reveal,.js .rise,.js .stg > *,.js .row,.js .row .c-life,.js .hero-pic{transform:none !important;animation:none;transition:opacity .3s linear}
+  .js .rise{opacity:1}
+  .js.ready .hero-pic{transform:none}
+  .js .h1-school .nm::after{transform:none;transition:none}
+  .tv__glass.off{transform:none;opacity:0;transition:opacity .12s linear}
+  .tv__glass.back{transform:none;transition:opacity .2s linear}
+  .tv__flash.go,.typing .caret{animation:none}
+  .btn,.dot,.menu .chev{transition:none}
+}
+</style>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <p class="school"><strong>בית ספר מגן</strong> · מדריך: אמנון</p>
+    <a class="logo top" href="https://d-world.co.il" aria-label="Tech4Kids"><img src="../assets/logo.png" alt="Tech4Kids" width="240" height="216"></a>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>
+          <span class="h1-school rise">בית ספר <span class="nm">מגן</span></span>
+          <span class="h1-sub rise" style="--d:80ms">סיכום פעילות: תלמידים במסלול טכנולוגי</span>
+        </h1>
+        <p class="hero-meta rise" style="--d:120ms">כיתות ד', ה' ו-ו'</p>
+        <ul class="menu rise" style="--d:160ms" aria-label="קפיצה לכיתה">
+          <li><a href="#g4"><span class="ibox"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15.39 4.39a1 1 0 0 0 1.68-.474 2.5 2.5 0 1 1 3.014 3.015 1 1 0 0 0-.474 1.68l1.683 1.682a2.414 2.414 0 0 1 0 3.414L19.61 15.39a1 1 0 0 1-1.68-.474 2.5 2.5 0 1 0-3.014 3.015 1 1 0 0 1 .474 1.68l-1.683 1.682a2.414 2.414 0 0 1-3.414 0L8.61 19.61a1 1 0 0 0-1.68.474 2.5 2.5 0 1 1-3.014-3.015 1 1 0 0 0 .474-1.68l-1.683-1.682a2.414 2.414 0 0 1 0-3.414L4.39 8.61a1 1 0 0 1 1.68.474 2.5 2.5 0 1 0 3.014-3.015 1 1 0 0 1-.474-1.68l1.683-1.682a2.414 2.414 0 0 1 3.414 0z"/></svg></span><span class="g">כיתות ד'</span><span class="t">תוכנית האקדמיה למתכנתים צעירים</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></a></li>
+          <li><a href="#g6"><span class="ibox"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg></span><span class="g">כיתות ו'</span><span class="t">תכנון ופיתוח משחקי מחשב בסגנון ארקייד</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></a></li>
+          <li><a href="#ai"><span class="ibox"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg></span><span class="g">כיתות ה'-ו'</span><span class="t">Vibe Coding: פיתוח עם בינה מלאכותית</span><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></a></li>
+        </ul>
+      </div>
+      <figure class="hero-pic">
+        <img src="media/g4-a.jpg" width="800" height="600" alt="תלמיד מצביע על פקודה במסך, בזמן פתרון משימת תכנות" fetchpriority="high">
+      </figure>
+    </div>
+  </div>
+
+  <!-- ===== Grade 4 ===== -->
+  <section class="act" id="g4" aria-labelledby="g4-h">
+    <div class="wrap">
+      <h2 id="g4-h" class="reveal"><span class="grade">כיתות ד'</span> תוכנית האקדמיה למתכנתים צעירים</h2>
+      <p class="lead reveal">התלמידים למדו את יסודות התכנות דרך משימות קצרות: מסדרים פקודות, והדמות על המסך מבצעת אותן. בסוף התוכנית כל תלמיד בנה כמה משחקים משלו. קודם לפי הרעיון שלו, אחר כך שיפר לפי משוב מהמדריך, ולבסוף שיתף אותם.</p>
+
+      <div class="g4-grid">
+        <div>
+          <h3 class="reveal">מה למדנו</h3>
+          <p class="game-note reveal"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="6" x2="10" y1="11" y2="11"/><line x1="8" x2="8" y1="9" y2="13"/><line x1="15" x2="15.01" y1="12" y2="12"/><line x1="18" x2="18.01" y1="10" y2="10"/><path d="M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z"/></svg>התוכנית בנויה בשלבים: פותרים אתגר, ועוברים לבא.</p>
+          <ol class="strip stg" aria-label="מושגי תכנות">
+            <li class="blk"><span class="ibox"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 11 2-2-2-2"/><path d="M11 13h4"/><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/></svg></span><div><b>פקודה</b><span>הוראה אחת לדמות, למשל צעד או קפיצה</span></div></li>
+            <li class="blk"><span class="ibox"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 12h11"/><path d="M10 18h11"/><path d="M10 6h11"/><path d="M4 10h2"/><path d="M4 6h1v4"/><path d="M6 18H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></span><div><b>רצף</b><span>כמה פקודות, בסדר הנכון</span></div></li>
+            <li class="blk"><span class="ibox"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></span><div><b>לולאה</b><span>פקודה שחוזרת על עצמה, בלי לכתוב אותה שוב</span></div></li>
+            <li class="blk"><span class="ibox"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></span><div><b>משתנה</b><span>מקום ששומר מידע, למשל ניקוד</span></div></li>
+            <li class="blk"><span class="ibox"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg></span><div><b>נוסחה</b><span>חישוב שהמחשב עושה, למשל סכום נקודות</span></div></li>
+            <li class="blk"><span class="ibox"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></span><div><b>אוטומציה</b><span>מתכנתים פעם אחת, והמחשב ממשיך לבד</span></div></li>
+          </ol>
+        </div>
+        <figure class="shot reveal" style="--d:80ms">
+          <img src="media/g4-b.jpg" width="800" height="600" alt="שורת פקודות בתחתית המסך, שמזיזה את הדמות במשימה" loading="lazy" decoding="async">
+          <figcaption>מסדרים פקודות בשורה, והדמות מבצעת אותן לפי הסדר.</figcaption>
+        </figure>
+      </div>
+
+      <h3 class="reveal">אילו מיומנויות התחזקו</h3>
+      <ul class="iskills stg">
+        <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/></svg>חשיבה לוגית</li>
+        <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></svg>תכנון הצעדים לפני שמתחילים</li>
+        <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>פירוק בעיה גדולה לשלבים קטנים</li>
+        <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>התמודדות עם משימה שלא מצליחה בפעם הראשונה</li>
+      </ul>
+      <p class="after reveal">המדריך הסביר כל מושג בעזרת דוגמאות מוכרות לילדים.</p>
+    </div>
+  </section>
+
+  <!-- ===== Grade 6: MakeCode Arcade ===== -->
+  <section class="act tinted" id="g6" aria-labelledby="g6-h">
+    <div class="wrap">
+      <h2 id="g6-h" class="reveal"><span class="grade">כיתות ו'</span> תכנון ופיתוח משחקי מחשב בסגנון ארקייד</h2>
+      <p class="lead reveal">התלמידים עבדו בסביבת פיתוח של מיקרוסופט ותכנתו בעזרת בלוקים. בנינו יחד 3 משחקי רטרו דו-ממדיים, וכל תלמיד עיצב בהם דמויות משלו. כל פרויקט הוסיף יכולת חדשה, כך שהקוד הלך ונעשה מורכב יותר.</p>
+
+      <h3 class="reveal">מה למדנו, ואיפה זה פוגש אותנו בחיים</h3>
+      <div class="life" role="table" aria-label="מה למדנו בקוד, ואיפה זה קיים בחיים">
+        <div class="life-head" role="row"><span role="columnheader">מה למדנו</span><span role="columnheader">בקוד</span><span role="columnheader">בחיים</span></div>
+
+        <div class="row" role="row">
+          <div class="c-name" role="rowheader"><span class="ibox"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><path d="M9 17c2 0 2.8-1 2.8-2.8V10c0-2 1-3.3 3.2-3"/><path d="M9 11.2h5.7"/></svg></span><b>פונקציות</b></div>
+          <div class="c-game" role="cell"><span class="lab">בקוד:</span>כותבים קוד פעם אחת ומפעילים אותו כמה שרוצים</div>
+          <div class="c-life" role="cell"><span class="lab">בחיים:</span>כמו מתכון: כותבים פעם אחת ומבשלים לפיו שוב ושוב</div>
+        </div>
+        <div class="row" role="row">
+          <div class="c-name" role="rowheader"><span class="ibox"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></span><b>לולאות</b></div>
+          <div class="c-game" role="cell"><span class="lab">בקוד:</span>פעולה שחוזרת, למשל אויב שמופיע כל כמה שניות</div>
+          <div class="c-life" role="cell"><span class="lab">בחיים:</span>כמו רמזור שמתחלף כל היום באותו סדר</div>
+        </div>
+        <div class="row" role="row">
+          <div class="c-name" role="rowheader"><span class="ibox"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></span><b>משתנים</b></div>
+          <div class="c-game" role="cell"><span class="lab">בקוד:</span>ניקוד וחיים שמתעדכנים כל הזמן</div>
+          <div class="c-life" role="cell"><span class="lab">בחיים:</span>כמו היתרה ברב-קו, שיורדת בכל נסיעה</div>
+        </div>
+        <div class="row" role="row">
+          <div class="c-name" role="rowheader"><span class="ibox"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="2" x2="5" y1="12" y2="12"/><line x1="19" x2="22" y1="12" y2="12"/><line x1="12" x2="12" y1="2" y2="5"/><line x1="12" x2="12" y1="19" y2="22"/><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="3"/></svg></span><b>צירי X ו-Y</b></div>
+          <div class="c-game" role="cell"><span class="lab">בקוד:</span>מציבים דמות בנקודה מדויקת על המסך</div>
+          <div class="c-life" role="cell"><span class="lab">בחיים:</span>כמו שורה וכיסא באולם קולנוע</div>
+        </div>
+        <div class="row" role="row">
+          <div class="c-name" role="rowheader"><span class="ibox"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 3h5v5"/><path d="M8 3H3v5"/><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3"/><path d="m15 9 6-6"/></svg></span><b>תנאים (אם-אז)</b></div>
+          <div class="c-game" role="cell"><span class="lab">בקוד:</span>אם השחקן פוגע באויב, הוא מאבד חיים</div>
+          <div class="c-life" role="cell"><span class="lab">בחיים:</span>אם יורד גשם, לוקחים מטרייה</div>
+        </div>
+        <div class="row" role="row">
+          <div class="c-name" role="rowheader"><span class="ibox"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg></span><b>התנגשות, תנועה ואנימציה</b></div>
+          <div class="c-game" role="cell"><span class="lab">בקוד:</span>דמויות שזזות, נפגשות ומגיבות</div>
+          <div class="c-life" role="cell"><span class="lab">בחיים:</span>כמו חיישן חניה שמצפצף ליד קיר</div>
+        </div>
+        <div class="row" role="row">
+          <div class="c-name" role="rowheader"><span class="ibox"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 2 1.88 1.88"/><path d="M14.12 3.88 16 2"/><path d="M9 7.13v-1a3.003 3.003 0 1 1 6 0v1"/><path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6"/><path d="M12 20v-9"/><path d="M6.53 9C4.6 8.8 3 7.1 3 5"/><path d="M6 13H2"/><path d="M3 21c0-2.1 1.7-3.9 3.8-4"/><path d="M20.97 5c0 2.1-1.6 3.8-3.5 4"/><path d="M22 13h-4"/><path d="M17.2 17c2.1.1 3.8 1.9 3.8 4"/></svg></span><b>איתור ותיקון באגים</b></div>
+          <div class="c-game" role="cell"><span class="lab">בקוד:</span>משהו לא עובד? מאתרים את הבעיה ומתקנים</div>
+          <div class="c-life" role="cell"><span class="lab">בחיים:</span>כמו לבדוק שלב אחר שלב למה האופניים לא נוסעים</div>
+        </div>
+      </div>
+
+      <p class="beyond reveal"><b>ומעבר לקוד:</b> חשיבה לוגית, פתרון בעיות, יצירתיות, ועבודה מסודרת ומדויקת.</p>
+      <p class="note reveal">כל תלמיד שמר את מה שבנה. שווה לבקש שיראה לכם.</p>
+    </div>
+  </section>
+
+  <!-- ===== Grades 5-6: games with AI ===== -->
+  <section class="act" id="ai" aria-labelledby="ai-h" style="padding-bottom:0">
+    <div class="wrap">
+      <h2 id="ai-h" class="reveal"><span class="grade">כיתות ה'-ו'</span> Vibe Coding: פיתוח עם בינה מלאכותית</h2>
+      <p class="lead reveal">ב-Vibe Coding מתארים במילים מה רוצים לבנות, והבינה המלאכותית כותבת את הקוד. התלמידים כתבו בקשות, בדקו את התוצאה וביקשו שיפורים, עד שהגיעו למה שדמיינו. רובם בחרו בנושא שהם אוהבים: כדורגל, כדורסל, מרוצים ורונאלדו.</p>
+
+      <blockquote class="story reveal">
+        <p>בהתחלה חלק מהתלמידים הגיעו בלי הרבה עניין. אחרי פרויקט או שניים כבר היה קשה לעצור אותם. הם הגיעו עם רעיונות משלהם וביקשו עוד שיעור כדי להמשיך. זה היה נכון לבנים ולבנות כאחד.</p>
+      </blockquote>
+
+      <h3 class="reveal">מה למדנו, ואילו מיומנויות התחזקו</h3>
+      <div class="big reveal">
+        <h4>להסביר בדיוק מה רוצים</h4>
+        <p>הבינה המלאכותית לא קוראת מחשבות. כדי לקבל את מה שדמיינו, התלמידים למדו לכתוב פרומפט: בקשה ברורה ומפורטת.</p>
+      </div>
+
+      <div class="prompts">
+        <div class="pr weak reveal">
+          <p class="pr-head"><span class="mark"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></span>פרומפט חלש</p>
+          <p class="bubble">צור לי משחק</p>
+          <p class="pr-out">הבינה המלאכותית צריכה לנחש, <b>והתוצאה כללית</b> ולא דומה לרעיון.</p>
+        </div>
+        <div class="pr strong reveal" style="--d:80ms">
+          <p class="pr-head"><span class="mark"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>פרומפט חזק</p>
+          <p class="bubble" id="strong"><span class="ghost" aria-hidden="true">צור משחק כדורסל: השחקן קולע לסל לפני שהזמן נגמר. יש ניקוד, טיימר ושחקני הגנה. כל הכיתוב בעברית.</span><span class="typed" id="typed">צור משחק כדורסל: השחקן קולע לסל לפני שהזמן נגמר. יש ניקוד, טיימר ושחקני הגנה. כל הכיתוב בעברית.</span></p>
+          <p class="pr-out">כל פרט מכוון את התוצאה, <b>והיא יוצאת קרובה לרעיון.</b></p>
+        </div>
+      </div>
+
+      <ul class="small-skills stg">
+        <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m8 2 1.88 1.88"/><path d="M14.12 3.88 16 2"/><path d="M9 7.13v-1a3.003 3.003 0 1 1 6 0v1"/><path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6"/><path d="M12 20v-9"/><path d="M6 13H2"/><path d="M22 13h-4"/></svg><div><b>לבדוק ולשפר</b>מנסים, מוצאים מה לא עובד ומבקשים תיקון</div></li>
+        <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg><div><b>מרעיון לתוצר</b>לוקחים רעיון ומביאים אותו עד הסוף</div></li>
+      </ul>
+    </div>
+
+    <!-- the peak: TV channels -->
+    <div class="band" id="watch">
+      <div class="wrap">
+        <h3>מוזמנים לצפות</h3>
+        <p class="intro">צילמנו מהמסך בכיתה כמה מהעבודות.</p>
+
+        <div class="tv" id="tv">
+          <div>
+            <div class="tv__body">
+              <div class="tv__screen" id="screen" tabindex="0" role="region" aria-roledescription="טלוויזיה" aria-label="משחקי התלמידים. אפשר להחליף ערוץ בחצים או בהחלקה.">
+                <div class="tv__glass" id="glass">
+                  <div class="ch on" data-title="מיני כדורגל" data-desc="שחקן נגד המחשב. הניקוד מתעדכן בראש המסך.">
+                    <video muted loop playsinline preload="metadata" poster="media/ch-football.jpg" width="640" height="480" aria-label="מיני כדורגל"><source src="media/ch-football.mp4" type="video/mp4"></video>
+                  </div>
+                  <div class="ch" data-title="קליעה לסל" data-desc="זורקים לסל לפני שהזמן נגמר. יש ניקוד, טיימר ומסירות.">
+                    <video muted loop playsinline preload="none" poster="media/ch-basket.jpg" width="640" height="480" aria-label="קליעה לסל"><source src="media/ch-basket.mp4" type="video/mp4"></video>
+                  </div>
+                  <div class="ch" data-title="מרוץ במסלולים" data-desc="עוברים בין נתיבים ומתחמקים ממכשולים.">
+                    <video muted loop playsinline preload="none" poster="media/ch-race.jpg" width="640" height="480" aria-label="מרוץ במסלולים"><source src="media/ch-race.mp4" type="video/mp4"></video>
+                  </div>
+                  <div class="ch" data-title="רונאלדו קליקר" data-desc="כל לחיצה על המגרש היא גול. בגולים קונים שדרוגים, כמו נעלי זהב ואצטדיון מלא קהל.">
+                    <img src="media/ch-cr7.jpg" width="640" height="480" alt="רונאלדו קליקר: מגרש ללחיצה וחנות שדרוגים" loading="lazy" decoding="async">
+                  </div>
+                </div>
+                <span class="tv__flash" id="flash" aria-hidden="true"></span>
+                <span class="tv__num" aria-hidden="true">ערוץ <b id="chnum">1</b></span>
+              </div>
+              <div class="tv__feet" aria-hidden="true"><i></i><i></i></div>
+            </div>
+          </div>
+
+          <div class="tv__panel" id="panel" aria-live="polite">
+            <p class="tv__title" id="ttl">מיני כדורגל</p>
+            <p class="tv__desc" id="dsc">שחקן נגד המחשב. הניקוד מתעדכן בראש המסך.</p>
+            <div class="ctrl">
+              <div class="dots" role="group" aria-label="בחירת ערוץ">
+                <button class="dot" type="button" data-go="0" aria-current="true" aria-label="ערוץ 1: מיני כדורגל">1</button>
+                <button class="dot" type="button" data-go="1" aria-current="false" aria-label="ערוץ 2: קליעה לסל">2</button>
+                <button class="dot" type="button" data-go="2" aria-current="false" aria-label="ערוץ 3: מרוץ במסלולים">3</button>
+                <button class="dot" type="button" data-go="3" aria-current="false" aria-label="ערוץ 4: רונאלדו קליקר">4</button>
+              </div>
+              <button class="btn" type="button" id="next">ערוץ הבא<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+            </div>
+            <p class="hint">בנייד אפשר גם להחליק על המסך.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Continue at home: AI ===== -->
+  <section class="home" aria-labelledby="home-h">
+    <div class="wrap">
+      <h2 id="home-h" class="reveal">ממשיכים בבית</h2>
+      <p class="sub reveal">אפשר להמשיך לבנות עם בינה מלאכותית, ביחד עם הילד.</p>
+      <div class="home-grid">
+        <ol class="steps stg">
+          <li><span class="step-n" aria-hidden="true">1</span><span>פותחים צ'אט של בינה מלאכותית בחשבון של הורה, ויושבים ליד הילד.</span></li>
+          <li><span class="step-n" aria-hidden="true">2</span><span>הילד מתאר מה הוא רוצה לבנות: מה עושים, איך מנצחים ואיך זה נראה. אפשר להתחיל מהתבנית.</span></li>
+          <li><span class="step-n" aria-hidden="true">3</span><span>מורידים את הקובץ שמתקבל ופותחים אותו בדפדפן.</span></li>
+          <li><span class="step-n" aria-hidden="true">4</span><span>בודקים, ומבקשים שינוי אחד בכל פעם, למשל "תוסיף טיימר".</span></li>
+        </ol>
+        <div class="tpl reveal" style="--d:80ms">
+          <h3>תבנית להתחלה</h3>
+          <pre id="tpl">בנה לי <mark>[מה רוצים לבנות]</mark> שבו <mark>[מה עושים]</mark>.
+יש <mark>[ניקוד / חיים / טיימר]</mark>.
+כל הכיתוב בעברית.
+בנה הכול בקובץ HTML אחד.</pre>
+          <button class="btn" type="button" id="copy"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>העתיקו</button><span class="copied" id="copied" role="status"></span>
+        </div>
+      </div>
+      <p class="land reveal">כדי להתחיל, מספיק רעיון אחד.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-row">
+    <a class="logo foot" href="https://d-world.co.il" aria-label="Tech4Kids"><img src="../assets/logo.png" alt="Tech4Kids" width="240" height="216"></a>
+    <div class="foot-text">
+      <p>Tech4Kids - מסלולי טכנולוגיה לילדים</p>
+      <a href="https://d-world.co.il">d-world.co.il</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  window.addEventListener('load',function(){setTimeout(function(){root.classList.add('ready')},60)});
+  setTimeout(function(){root.classList.add('ready')},1200);
+
+  /* typewriter for the strong prompt */
+  var typed=document.getElementById('typed'),full=typed.textContent,typedDone=false;
+  function typeIt(){
+    if(typedDone)return;typedDone=true;
+    if(reduce)return;
+    var i=0,caret=document.createElement('span');caret.className='caret';
+    typed.textContent='';typed.parentNode.classList.add('typing');
+    var txt=document.createTextNode('');typed.appendChild(txt);typed.appendChild(caret);
+    var t=setInterval(function(){
+      i+=2;txt.nodeValue=full.slice(0,i);
+      if(i>=full.length){clearInterval(t);setTimeout(function(){caret.remove();typed.parentNode.classList.remove('typing')},900)}
+    },35);
+  }
+
+  /* reveal on scroll */
+  var els=document.querySelectorAll('.reveal,.stg,.row');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});typeIt()}
+  else{
+    var io=new IntersectionObserver(function(en){en.forEach(function(e){
+      if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);if(e.target.classList.contains('strong'))setTimeout(typeIt,250)}
+    })},{threshold:.15,rootMargin:'0px 0px -30px 0px'});
+    els.forEach(function(e){io.observe(e)});
+  }
+
+  /* TV: switch channels */
+  var screen=document.getElementById('screen'),glass=document.getElementById('glass'),flash=document.getElementById('flash');
+  var chs=[].slice.call(glass.querySelectorAll('.ch')),dots=[].slice.call(document.querySelectorAll('.dot'));
+  var panel=document.getElementById('panel'),ttl=document.getElementById('ttl'),dsc=document.getElementById('dsc'),num=document.getElementById('chnum');
+  var cur=0,busy=false,visible=false;
+  if(reduce){chs.forEach(function(c){var v=c.querySelector('video');if(v){v.controls=true}})}
+  function play(){
+    chs.forEach(function(c,i){
+      var v=c.querySelector('video');if(!v)return;
+      if(i===cur&&visible&&!reduce){if(v.preload==='none'){v.preload='auto'}var p=v.play();if(p&&p.catch)p.catch(function(){})}
+      else{v.pause()}
+    });
+  }
+  function show(i){
+    chs.forEach(function(c,k){c.classList.toggle('on',k===i)});
+    dots.forEach(function(d,k){d.setAttribute('aria-current',k===i?'true':'false')});
+    ttl.textContent=chs[i].getAttribute('data-title');
+    dsc.textContent=chs[i].getAttribute('data-desc');
+    num.textContent=String(i+1);
+    panel.classList.remove('panel-out');
+    cur=i;play();
+  }
+  function go(i){
+    i=(i+chs.length)%chs.length;
+    if(i===cur||busy)return;
+    busy=true;panel.classList.add('panel-out');
+    glass.classList.remove('back');glass.classList.add('off');
+    if(!reduce){flash.classList.remove('go');void flash.offsetWidth;flash.classList.add('go')}
+    setTimeout(function(){show(i);glass.classList.remove('off');glass.classList.add('back');setTimeout(function(){busy=false},240)},120);
+  }
+  document.getElementById('next').addEventListener('click',function(){go(cur+1)});
+  dots.forEach(function(d){d.addEventListener('click',function(){go(parseInt(d.getAttribute('data-go'),10))})});
+  screen.addEventListener('keydown',function(e){
+    if(e.key==='ArrowLeft'){go(cur+1);e.preventDefault()}
+    else if(e.key==='ArrowRight'){go(cur-1);e.preventDefault()}
+  });
+  var sx=null,sy=0;
+  screen.addEventListener('touchstart',function(e){sx=e.touches[0].clientX;sy=e.touches[0].clientY},{passive:true});
+  screen.addEventListener('touchend',function(e){
+    if(sx===null)return;
+    var dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;sx=null;
+    if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)){go(dx<0?cur+1:cur-1)}
+  },{passive:true});
+  var mx=null;
+  screen.addEventListener('mousedown',function(e){mx=e.clientX});
+  window.addEventListener('mouseup',function(e){if(mx===null)return;var dx=e.clientX-mx;mx=null;if(Math.abs(dx)>50){go(dx<0?cur+1:cur-1)}});
+  if('IntersectionObserver' in window){new IntersectionObserver(function(en){visible=en[0].isIntersecting;play()},{threshold:.35}).observe(screen)}
+  else{visible=true;play()}
+
+  /* copy the starter prompt */
+  var cb=document.getElementById('copy'),msg=document.getElementById('copied');
+  cb.addEventListener('click',function(){
+    var text=document.getElementById('tpl').textContent;
+    function ok(){msg.textContent='הועתק';msg.classList.add('show');setTimeout(function(){msg.classList.remove('show')},1800)}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(ok,fallback)}else{fallback()}
+    function fallback(){var ta=document.createElement('textarea');ta.value=text;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');ok()}catch(e){}ta.remove()}
+  });
+})();
+</script>
+</body>
+</html>
